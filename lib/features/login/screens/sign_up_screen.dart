@@ -45,7 +45,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                   Text(
                     "Qaree",
                     style: context.textThemes.displayLarge?.copyWith(
-                      fontFamily: "JosefinSans",
+                      fontFamily: "Almarai",
                       color: ColorsConst.white,
                       fontWeight: FontWeight.w500,
                     ),
@@ -58,7 +58,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                     ),
                     width: 230.h,
                     child: Image(
-                        image: AssetImage("assets/images/white_logo.png")),
+                        image: AssetImage("assets/images/RC_logo_white.png")),
                   ),
                   SpacingConst.vSpacing80,
                   CustomTextField(

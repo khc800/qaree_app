@@ -25,7 +25,7 @@ class GroupDetailsScreen extends ConsumerStatefulWidget {
 
 class _GroupDetailsScreenState extends ConsumerState<GroupDetailsScreen>
     with SingleTickerProviderStateMixin {
-  late final GroupsScreenController _controller;
+  late GroupsScreenController _controller;
 
   @override
   void didChangeDependencies() {
@@ -50,16 +50,16 @@ class _GroupDetailsScreenState extends ConsumerState<GroupDetailsScreen>
                 color: ColorsConst.primaryPurple,
               ),
               tabs: [
-                Tab(text: "Messages"),
-                Tab(text: "Statistics"),
-                Tab(text: "Books"),
+                Tab(text: "الإحصائيات"),
+                Tab(text: "الإعلانات"),
+                Tab(text: "الكتب"),
               ],
             ),
           ),
           body: TabBarView(
             children: [
-              ChatPage(),
               GroupStatisticsScreen(groupMembers: widget.group?.members),
+              ChatPage(),
               GroupBooksScreen(groupBook: widget.group?.groupBooks),
             ],
           ),

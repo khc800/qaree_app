@@ -412,7 +412,7 @@ class GroupStatisticsScreenState extends ConsumerState<GroupStatisticsScreen> {
                             ),
                           ),
                           Text(
-                            'Total Reading Time',
+                            'وقت القراءة الإجمالي',
                             style: context.textThemes.titleMedium?.copyWith(
                               fontWeight: FontWeight.w500,
                               color: ColorsConst.primaryPurple,
@@ -477,7 +477,7 @@ class GroupStatisticsScreenState extends ConsumerState<GroupStatisticsScreen> {
           ),
           SpacingConst.vSpacing30,
           InfoItem(
-            title: 'Best Reader',
+            title: 'أعلى القراء',
             value: ref
                 .watch(ReaderRepo.getUserByIdProvider(
                     ref.watch(bestReaderProvider)))
@@ -573,7 +573,7 @@ class InfoItem extends StatelessWidget {
                 Text(
                   title,
                   style: context.textThemes.bodyMedium?.copyWith(
-                    fontFamily: "JosefinSans",
+                    fontFamily: "Almarai",
                     color: ColorsConst.grey,
                   ),
                 ),
@@ -592,7 +592,7 @@ class InfoItem extends StatelessWidget {
                   Text(
                     value,
                     style: context.textThemes.headlineLarge?.copyWith(
-                      fontFamily: "JosefinSans",
+                      fontFamily: "Almarai",
                       color: ColorsConst.primaryBlack,
                       fontWeight: FontWeight.bold,
                     ),
@@ -615,7 +615,7 @@ class InfoItem extends StatelessWidget {
             SpacingConst.vSpacing8,
             RichText(
               text: TextSpan(
-                text: 'Total: ',
+                text: 'المجموع: ',
                 style: context.textThemes.titleMedium?.copyWith(
                   color: ColorsConst.primaryPurple,
                   fontWeight: FontWeight.w800,

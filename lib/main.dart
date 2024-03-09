@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         return ProviderScope(
             child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Qaree App',
+          title: 'تحدي القراء',
           theme: MainTheme.main,
           home: child,
         ));

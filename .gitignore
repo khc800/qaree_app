@@ -10,6 +10,8 @@
 .history
 .svn/
 
+*.rb
+
 # IntelliJ related
 *.iml
 *.ipr
@@ -133,3 +135,6 @@ app.*.symbols
 .flutter-plugins-dependencies
 .flutter-plugins
 !/dev/ci/**/Gemfile.lock
+
+
+ios/

@@ -15,6 +15,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
+import '../../personal_information/screens/personal_information.dart';
+
 class StatisticsScreen extends ConsumerStatefulWidget {
   const StatisticsScreen({super.key});
 
@@ -23,7 +25,7 @@ class StatisticsScreen extends ConsumerStatefulWidget {
 }
 
 class _StatisticsScreenState extends ConsumerState<StatisticsScreen> {
-  late final StatisticsController _controller;
+  late StatisticsController _controller;
 
   @override
   void didChangeDependencies() {
@@ -38,7 +40,19 @@ class _StatisticsScreenState extends ConsumerState<StatisticsScreen> {
     return user.when(
       data: (user) => Scaffold(
         backgroundColor: ColorsConst.veryLightGrey,
-        appBar: CustomAppBar(context: context, title: 'Statistics'),
+        // appBar: CustomAppBar(context: context, title: 'إحصائيات'),
+        appBar: CustomAppBar(
+          context: context,
+          title: 'إحصائياتي',
+          rightButtonIcon: Icons.person, // Icon for the button on the right
+          onRightButtonPressed: () {
+            // Define what happens when the button is pressed
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PersonalInformation()),
+            );
+          },
+        ),
         body: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -48,13 +62,13 @@ class _StatisticsScreenState extends ConsumerState<StatisticsScreen> {
                 ListView(
                   shrinkWrap: true,
                   children: [
-                    SpacingConst.vSpacing20,
-                    Text(
-                      'Daily',
-                      style: context.textThemes.displaySmall?.copyWith(
-                        color: ColorsConst.darkGrey,
-                      ),
-                    ),
+                    // SpacingConst.vSpacing20,
+                    // Text(
+                    //   'اليومي',
+                    //   style: context.textThemes.displaySmall?.copyWith(
+                    //     color: ColorsConst.darkGrey,
+                    //   ),
+                    // ),
                     SpacingConst.vSpacing16,
                     Consumer(builder: (context, ref, child) {
                       final session = ref.watch(
@@ -65,12 +79,11 @@ class _StatisticsScreenState extends ConsumerState<StatisticsScreen> {
                           return Column(
                             children: [
                               InfoItem(
-                                title: 'Reading Time',
-                                value: _controller
-                                    .getFormattedTotalReadingTime(sessions),
-                                average:
-                                    "${_controller.getFormattedAverageReadingTime(sessions)} - Session",
-                                icon: Icons.timer,
+                                title: "عدد أيام القراءة بدون انقطاع",
+                                subtitle: "أيام",
+                                value: "6",
+                                average: "",
+                                icon: Icons.local_fire_department,
                               ),
                               // SpacingConst.vSpacing20,
                               // InfoItem(
@@ -86,11 +99,23 @@ class _StatisticsScreenState extends ConsumerState<StatisticsScreen> {
                               // ),
                               SpacingConst.vSpacing20,
                               InfoItem(
-                                title: 'Reading Sessions',
-                                value: sessions.length.toString(),
+                                title: "متوسط القراءة اليومية",
+                                subtitle: "دقيقة / يوم",
+                                // value: sessions.length.toString(),
+                                value: "02:31:15",
                                 average:
-                                    "${_controller.getFormattedAverageReadingTime(sessions)} - Session",
-                                icon: Icons.event_note_rounded,
+                                    "${_controller.getFormattedAverageReadingTime(sessions)}",
+                                icon: Icons.timer,
+                              ),
+                              SpacingConst.vSpacing20,
+                              InfoItem(
+                                title: "أعلى وقت قراءة",
+                                subtitle: "دقيقة / يوم",
+                                // value: sessions.length.toString(),
+                                value: "06:21:05",
+                                average:
+                                    "${_controller.getFormattedAverageReadingTime(sessions)}",
+                                icon: Icons.star,
                               ),
                             ],
                           );
@@ -135,6 +160,7 @@ class InfoItem extends StatelessWidget {
   final String value;
   final String average;
   final IconData icon;
+  final String subtitle;
 
   const InfoItem({
     Key? key,
@@ -142,6 +168,7 @@ class InfoItem extends StatelessWidget {
     required this.value,
     required this.average,
     required this.icon,
+    required this.subtitle,
   }) : super(key: key);
 
   @override
@@ -161,66 +188,67 @@ class InfoItem extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                Icon(
+                  icon,
+                  size: 35.sp,
+                ),
                 Text(
                   title,
                   style: context.textThemes.bodyMedium?.copyWith(
-                    fontFamily: "JosefinSans",
-                    color: ColorsConst.grey,
-                  ),
+                      fontFamily: "Almarai",
+                      color: ColorsConst.grey,
+                      fontSize: 20),
                 ),
-                Icon(
-                  icon,
-                  size: 20.sp,
-                )
               ],
             ),
-            SpacingConst.vSpacing16,
+            SpacingConst.vSpacing8,
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
                     value,
                     style: context.textThemes.displayLarge?.copyWith(
-                      fontFamily: "JosefinSans",
+                      fontFamily: "Almarai",
                       color: ColorsConst.primaryBlack,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  CircularPercentIndicator(
-                    restartAnimation: true,
-                    animation: true,
-                    animationDuration: 2000,
-                    radius: 27.w,
-                    lineWidth: 10.w,
-                    percent: 0.3,
-                    circularStrokeCap: CircularStrokeCap.round,
-                    progressColor: ColorsConst.primaryPurple,
-                    backgroundColor: ColorsConst.primaryBlack,
-                  ),
+                  // CircularPercentIndicator(
+                  //   restartAnimation: true,
+                  //   animation: true,
+                  //   animationDuration: 2000,
+                  //   radius: 27.w,
+                  //   lineWidth: 10.w,
+                  //   percent: 0.3,
+                  //   circularStrokeCap: CircularStrokeCap.round,
+                  //   progressColor: ColorsConst.primaryPurple,
+                  //   backgroundColor: ColorsConst.primaryBlack,
+                  // ),
                 ],
               ),
             ),
             Divider(color: ColorsConst.grey, thickness: 0.5.sp),
-            SpacingConst.vSpacing8,
-            RichText(
-              text: TextSpan(
-                text: 'Avg: ',
-                style: context.textThemes.titleMedium?.copyWith(
-                  color: ColorsConst.primaryPurple,
-                  fontWeight: FontWeight.w800,
-                ),
-                children: [
-                  TextSpan(
-                    text: average,
-                    style: context.textThemes.titleMedium?.copyWith(
-                      color: ColorsConst.primaryBlack,
-                      fontWeight: FontWeight.w800,
-                    ),
+            SpacingConst.vSpacing6,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: subtitle,
+                        style: context.textThemes.titleMedium?.copyWith(
+                          color: ColorsConst.primaryPurple,
+                          fontWeight: FontWeight.w800,
+                          fontFamily: "Almarai",
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),

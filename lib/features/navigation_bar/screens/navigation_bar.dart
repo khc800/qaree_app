@@ -8,6 +8,7 @@ import 'package:Qaree/features/statistics/screens/statistics_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class MainNavigationBar extends StatefulWidget {
   const MainNavigationBar({super.key});
@@ -18,7 +19,7 @@ class MainNavigationBar extends StatefulWidget {
 
 class _MainNavigationBarState extends State<MainNavigationBar> {
   PersistentTabController _controller =
-      PersistentTabController(initialIndex: 0);
+      PersistentTabController(initialIndex: 1);
   @override
   Widget build(BuildContext context) {
     return PersistentTabView(
@@ -28,6 +29,7 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
       items: _navBarsItems(),
       confineInSafeArea: true,
       padding: NavBarPadding.only(top: 30.h),
+      // margin: EdgeInsets.only(top: 30.h),
       backgroundColor: ColorsConst.primaryBlack, // Default is Colors.white.
       navBarHeight: 80.h,
       handleAndroidBackButtonPress: true, // Default is true.
@@ -60,57 +62,60 @@ class _MainNavigationBarState extends State<MainNavigationBar> {
 
   List<Widget> _buildScreens() {
     return [
-      HomeScreen(),
-      BookSearchScreen(),
-      StatisticsScreen(),
+      // BookSearchScreen(),
       GroupsScreen(),
-      PersonalInformation()
+      HomeScreen(),
+      StatisticsScreen(),
+      // PersonalInformation()
     ];
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.book_rounded),
-        title: ("Books"),
+        icon: Icon(Icons.group_rounded),
+        title: ("المجموعات"),
         inactiveColorSecondary: ColorsConst.veryLightGrey,
         activeColorSecondary: ColorsConst.lightPurple,
         activeColorPrimary: ColorsConst.white,
         inactiveColorPrimary: ColorsConst.veryLightGrey,
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.search),
-        title: ("Search"),
-        opacity: 1,
+        icon: SvgPicture.asset(
+          "assets/svg/RC_logo_color.svg",
+        ),
+        title: ("مكتبتي"),
         inactiveColorSecondary: ColorsConst.veryLightGrey,
         activeColorSecondary: ColorsConst.lightPurple,
         activeColorPrimary: ColorsConst.white,
         inactiveColorPrimary: ColorsConst.veryLightGrey,
       ),
+      // PersistentBottomNavBarItem(
+      //   icon: Icon(Icons.search),
+      //   title: ("البحث"),
+      //   opacity: 1,
+      //   inactiveColorSecondary: ColorsConst.veryLightGrey,
+      //   activeColorSecondary: ColorsConst.lightPurple,
+      //   activeColorPrimary: ColorsConst.white,
+      //   inactiveColorPrimary: ColorsConst.veryLightGrey,
+      // ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.bar_chart_rounded),
-        title: ("Statistics"),
+        title: ("إحصائياتي"),
         inactiveColorSecondary: ColorsConst.veryLightGrey,
         activeColorSecondary: ColorsConst.lightPurple,
         activeColorPrimary: ColorsConst.white,
         inactiveColorPrimary: ColorsConst.veryLightGrey,
       ),
-      PersistentBottomNavBarItem(
-        icon: Icon(Icons.group_rounded),
-        title: ("Groups"),
-        inactiveColorSecondary: ColorsConst.veryLightGrey,
-        activeColorSecondary: ColorsConst.lightPurple,
-        activeColorPrimary: ColorsConst.white,
-        inactiveColorPrimary: ColorsConst.veryLightGrey,
-      ),
-      PersistentBottomNavBarItem(
-        icon: Icon(Icons.person),
-        title: ("Profile"),
-        inactiveColorSecondary: ColorsConst.veryLightGrey,
-        activeColorSecondary: ColorsConst.lightPurple,
-        activeColorPrimary: ColorsConst.white,
-        inactiveColorPrimary: ColorsConst.veryLightGrey,
-      ),
+
+      // PersistentBottomNavBarItem(
+      //   icon: Icon(Icons.person),
+      //   title: ("الملف الشخصي"),
+      //   inactiveColorSecondary: ColorsConst.veryLightGrey,
+      //   activeColorSecondary: ColorsConst.lightPurple,
+      //   activeColorPrimary: ColorsConst.white,
+      //   inactiveColorPrimary: ColorsConst.veryLightGrey,
+      // ),
     ];
   }
 }

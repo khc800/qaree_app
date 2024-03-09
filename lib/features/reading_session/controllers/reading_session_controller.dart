@@ -108,15 +108,15 @@ class ReadingSessionController {
 
     // If the reading timer is currently active, return 'Pause'.
     if (readingTimerStatus) {
-      return 'Pause';
+      return 'توقف';
     }
     // If the reading timer has not yet started, return 'Start'.
     else if (readingTimeSeconds == 0) {
-      return 'Start';
+      return 'بدء';
     }
     // If the reading timer is not active but has already started, return 'Resume'.
     else {
-      return 'Resume';
+      return 'استئناف';
     }
   }
 

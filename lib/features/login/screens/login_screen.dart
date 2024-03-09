@@ -20,7 +20,7 @@ class LoginScreen extends ConsumerStatefulWidget {
 }
 
 class _LoginScreenState extends ConsumerState<LoginScreen> {
-  late final LoginScreenController _controller;
+  late LoginScreenController _controller;
 
   @override
   void didChangeDependencies() {
@@ -41,9 +41,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 children: [
                   SpacingConst.vSpacing60,
                   Text(
-                    "Qaree",
+                    "تحدي القراء",
                     style: context.textThemes.displayLarge?.copyWith(
-                      fontFamily: "JosefinSans",
+                      fontFamily: "Almarai",
                       color: ColorsConst.white,
                       fontWeight: FontWeight.w500,
                     ),
@@ -56,7 +56,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     ),
                     width: 230.w,
                     child: Image(
-                        image: AssetImage("assets/images/white_logo.png")),
+                        image: AssetImage("assets/images/RC_logo_white.png")),
                   ),
                   SpacingConst.vSpacing80,
                   CustomTextField(
@@ -64,7 +64,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     controller: _controller.emailController,
                     width: 350.w,
                     height: 50.h,
-                    placeHolderText: 'Email',
+                    placeHolderText: 'البريد الالكتروني',
                     icon: Icons.email,
                   ),
                   SpacingConst.vSpacing20,
@@ -73,13 +73,13 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     controller: _controller.passwordController,
                     width: 350.w,
                     height: 50.h,
-                    placeHolderText: 'Password',
+                    placeHolderText: 'الرقم السري',
                     isPassword: true,
                     icon: Icons.lock_outline_rounded,
                   ),
                   SpacingConst.vSpacing40,
                   CustomButton(
-                    label: "Login",
+                    label: "تسجيل دخول",
                     onPressed: _controller.onLoginPressed,
                     style: CustomButtonStyle.primary,
                     textStyle: context.textThemes.bodyMedium?.copyWith(
@@ -97,10 +97,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         ),
                         children: <TextSpan>[
                           TextSpan(
-                            text: "Don't have an account?",
+                            text: "ليس لدي حساب?",
                           ),
                           TextSpan(
-                            text: 'Sign Up',
+                            text: 'تسجيل',
                             style: TextStyle(
                               color: ColorsConst.primaryPurple,
                             ),

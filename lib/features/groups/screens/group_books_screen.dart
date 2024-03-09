@@ -90,7 +90,7 @@ class _GroupBooksScreenState extends ConsumerState<GroupBooksScreen> {
                                     textAlign: TextAlign.center,
                                     style:
                                         context.textThemes.titleSmall?.copyWith(
-                                      fontFamily: "JosefinSans",
+                                      fontFamily: "Almarai",
                                       color: ColorsConst.darkGrey,
                                     ),
                                     overflow: TextOverflow.ellipsis,
@@ -100,7 +100,7 @@ class _GroupBooksScreenState extends ConsumerState<GroupBooksScreen> {
                                     book?.description ?? "Unknown",
                                     style:
                                         context.textThemes.bodyMedium?.copyWith(
-                                      fontFamily: "JosefinSans",
+                                      fontFamily: "Almarai",
                                       color: ColorsConst.grey,
                                     ),
                                     maxLines: 7,

@@ -75,7 +75,7 @@ class _ChatPageState extends ConsumerState<ChatPage> {
                 },
                 child: const Align(
                   alignment: AlignmentDirectional.centerStart,
-                  child: Text('Photo'),
+                  child: Text('الصورة'),
                 ),
               ),
               TextButton(
@@ -85,14 +85,14 @@ class _ChatPageState extends ConsumerState<ChatPage> {
                 },
                 child: const Align(
                   alignment: AlignmentDirectional.centerStart,
-                  child: Text('File'),
+                  child: Text('الملف'),
                 ),
               ),
               TextButton(
                 onPressed: () => Navigator.pop(context),
                 child: const Align(
                   alignment: AlignmentDirectional.centerStart,
-                  child: Text('Cancel'),
+                  child: Text('إلغاء'),
                 ),
               ),
             ],

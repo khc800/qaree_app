@@ -42,7 +42,7 @@ class BookImage extends StatelessWidget {
                 child: Text(
                   book.name ?? "Unknown",
                   style: context.textThemes.titleLarge?.copyWith(
-                    fontFamily: "JosefinSans",
+                    fontFamily: "Almarai",
                     color: ColorsConst.darkGrey,
                   ),
                   textAlign: TextAlign.center,

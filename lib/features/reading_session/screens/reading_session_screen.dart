@@ -42,7 +42,7 @@ class _ReadingSessionState extends ConsumerState<ReadingSessionScreen> {
 
     return Scaffold(
       backgroundColor: ColorsConst.veryLightGrey,
-      appBar: CustomAppBar(context: context, title: 'Reading Session'),
+      appBar: CustomAppBar(context: context, title: 'جلسة قراءة'),
       body: SafeArea(
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -163,7 +163,7 @@ class _ReadingSessionState extends ConsumerState<ReadingSessionScreen> {
                             borderSide: BorderSide(
                                 width: 1, color: ColorsConst.lightGrey),
                           ),
-                          hintText: "write Down your thoughts",
+                          hintText: "قيّد صيدك",
                           hintStyle: context.textThemes.bodyLarge?.copyWith(
                             fontWeight: FontWeight.w300,
                             color: ColorsConst.grey,
@@ -189,7 +189,7 @@ class _ReadingSessionState extends ConsumerState<ReadingSessionScreen> {
                         CustomButton(
                           width: 110.w,
                           height: 50.h,
-                          label: "Cancel",
+                          label: "ألغ",
                           onPressed: _controller.onCancelNotePressed,
                           color: ColorsConst.primaryBlack,
                           textStyle: context.textThemes.bodyMedium?.copyWith(
@@ -199,7 +199,7 @@ class _ReadingSessionState extends ConsumerState<ReadingSessionScreen> {
                         CustomButton(
                           width: 110.w,
                           height: 50.h,
-                          label: "Save",
+                          label: "احفظ",
                           onPressed: () async => await _controller
                               .onSaveNotePressed(widget.book.id!),
                           style: CustomButtonStyle.primary,
@@ -234,7 +234,7 @@ class _ReadingSessionState extends ConsumerState<ReadingSessionScreen> {
                             ),
                             SpacingConst.hSpacing8,
                             Text(
-                              'Take Notes',
+                              'قيّد فائدة',
                               style: TextStyle(
                                 color: ColorsConst.white,
                                 fontFamily: FontConst.mainFontFamily,
@@ -295,7 +295,7 @@ class _ReadingSessionState extends ConsumerState<ReadingSessionScreen> {
                             ),
                             child: Center(
                               child: Text(
-                                'Done',
+                                'إنهاء',
                                 style: TextStyle(
                                   color: ColorsConst.white,
                                   fontFamily: FontConst.mainFontFamily,

@@ -75,7 +75,7 @@ class _BookPreviewScreenState extends ConsumerState<BookPreviewScreen> {
                               widget.book.name ?? "Unknown",
                               maxLines: 10,
                               style: context.textThemes.titleMedium?.copyWith(
-                                fontFamily: "JosefinSans",
+                                fontFamily: "Almarai",
                                 color: ColorsConst.black,
                               ),
                               overflow: TextOverflow.ellipsis,
@@ -84,7 +84,7 @@ class _BookPreviewScreenState extends ConsumerState<BookPreviewScreen> {
                             Text(
                               widget.book.authors?.first ?? "Unknown",
                               style: context.textThemes.bodyMedium?.copyWith(
-                                fontFamily: "JosefinSans",
+                                fontFamily: "Almarai",
                                 color: ColorsConst.grey,
                               ),
                               overflow: TextOverflow.ellipsis,
@@ -119,7 +119,7 @@ class _BookPreviewScreenState extends ConsumerState<BookPreviewScreen> {
                                                   child: Container(
                                                     padding:
                                                         EdgeInsets.all(5.h),
-                                                    width: 90.w,
+                                                    width: 140.w,
                                                     height: 30.w,
                                                     decoration: BoxDecoration(
                                                       color: hasTheBook
@@ -146,14 +146,14 @@ class _BookPreviewScreenState extends ConsumerState<BookPreviewScreen> {
                                                         SpacingConst.hSpacing6,
                                                         Text(
                                                           hasTheBook
-                                                              ? "Remove"
-                                                              : "Add",
+                                                              ? "إزالة من مكتبتي"
+                                                              : "إضافة إلى مكتبتي",
                                                           style: context
                                                               .textThemes
                                                               .bodyMedium
                                                               ?.copyWith(
                                                             fontFamily:
-                                                                "JosefinSans",
+                                                                "Almarai",
                                                             color: ColorsConst
                                                                 .white,
                                                           ),
@@ -173,7 +173,7 @@ class _BookPreviewScreenState extends ConsumerState<BookPreviewScreen> {
                                             .addBookToGroup(widget.book),
                                         child: Container(
                                           padding: EdgeInsets.all(5.h),
-                                          width: 140.w,
+                                          width: 150.w,
                                           height: 30.w,
                                           decoration: BoxDecoration(
                                             color: ColorsConst.positiveGreen,
@@ -189,11 +189,11 @@ class _BookPreviewScreenState extends ConsumerState<BookPreviewScreen> {
                                               ),
                                               SpacingConst.hSpacing6,
                                               Text(
-                                                "Add to Group",
+                                                "أضف إلى المجموعة",
                                                 style: context
                                                     .textThemes.bodyMedium
                                                     ?.copyWith(
-                                                  fontFamily: "JosefinSans",
+                                                  fontFamily: "Almarai",
                                                   color: ColorsConst.white,
                                                 ),
                                               ),
@@ -222,9 +222,9 @@ class _BookPreviewScreenState extends ConsumerState<BookPreviewScreen> {
                   ),
                   SpacingConst.vSpacing16,
                   Text(
-                    "About the Book",
+                    "معلومات الكتاب",
                     style: context.textThemes.displaySmall?.copyWith(
-                      fontFamily: "JosefinSans",
+                      fontFamily: "Almarai",
                       color: ColorsConst.grey,
                     ),
                   ),
@@ -243,9 +243,9 @@ class _BookPreviewScreenState extends ConsumerState<BookPreviewScreen> {
                         child: SizedBox(
                           width: 330.w,
                           child: Text(
-                            widget.book.description ?? "Unknown",
+                            widget.book.description ?? "لا توجد معلومات",
                             style: context.textThemes.headlineSmall?.copyWith(
-                              fontFamily: "JosefinSans",
+                              fontFamily: "Almarai",
                               color: ColorsConst.primaryBlack,
                               height: 1.5.h,
                             ),
@@ -272,9 +272,9 @@ class _BookPreviewScreenState extends ConsumerState<BookPreviewScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Reviews",
+                      "المراجعات",
                       style: context.textThemes.displaySmall?.copyWith(
-                        fontFamily: "JosefinSans",
+                        fontFamily: "Almarai",
                         color: ColorsConst.grey,
                       ),
                     ),
@@ -298,9 +298,9 @@ class _BookPreviewScreenState extends ConsumerState<BookPreviewScreen> {
                               ),
                               SpacingConst.hSpacing6,
                               Text(
-                                "Write a Review",
+                                "اكتب مراجعة",
                                 style: context.textThemes.bodyMedium?.copyWith(
-                                  fontFamily: "JosefinSans",
+                                  fontFamily: "Almarai",
                                   color: ColorsConst.white,
                                 ),
                               ),
@@ -350,10 +350,10 @@ class _BookPreviewScreenState extends ConsumerState<BookPreviewScreen> {
                                             height: 20,
                                           ),
                                           data: (user) => Text(
-                                            user?.name ?? "Unknown",
+                                            user?.name ?? "لا توجد معلومات",
                                             style: context.textThemes.bodyMedium
                                                 ?.copyWith(
-                                              fontFamily: "JosefinSans",
+                                              fontFamily: "Almarai",
                                               color: ColorsConst.grey,
                                             ),
                                           ),
@@ -368,7 +368,7 @@ class _BookPreviewScreenState extends ConsumerState<BookPreviewScreen> {
                                               style: context
                                                   .textThemes.bodyMedium
                                                   ?.copyWith(
-                                                fontFamily: "JosefinSans",
+                                                fontFamily: "Almarai",
                                                 color: ColorsConst.grey,
                                               ),
                                             ),

@@ -48,7 +48,7 @@ class _GroupMessagesScreenState extends ConsumerState<GroupMessagesScreen> {
                     child: Text(
                       widget.messages![index],
                       style: context.textThemes.bodyMedium?.copyWith(
-                        fontFamily: "JosefinSans",
+                        fontFamily: "Almarai",
                         color: ColorsConst.primaryBlack,
                       ),
                     ),

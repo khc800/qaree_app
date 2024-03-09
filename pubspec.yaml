@@ -94,9 +94,11 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/launch_icon.png"
+  image_path: "assets/images/RC_logo_color.png"
   min_sdk_android: 21
-
+  # background_color_ios: "#ff0000"
+  # white background
+  background_color_ios: "#ffffff"
   flutter_lints: ^2.0.0
 
 flutter:
@@ -108,6 +110,6 @@ flutter:
     - assets/svg/
 
   fonts:
-    - family: JosefinSans
+    - family: Almarai
       fonts:
-        - asset: assets/fonts/JosefinSans-Regular.ttf
+        - asset: assets/fonts/Almarai-Regular.ttf

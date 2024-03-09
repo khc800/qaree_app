@@ -42,7 +42,7 @@ class _AddReviewScreenState extends ConsumerState<AddReviewScreen> {
       backgroundColor: ColorsConst.veryLightGrey,
       appBar: CustomAppBar(
         context: context,
-        title: 'Review',
+        title: 'مراجعة',
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -119,7 +119,7 @@ class _AddReviewScreenState extends ConsumerState<AddReviewScreen> {
                         borderSide:
                             BorderSide(width: 1, color: ColorsConst.lightGrey),
                       ),
-                      hintText: "write Down your thoughts",
+                      hintText: "ألهم غيرك",
                       hintStyle: context.textThemes.bodyLarge?.copyWith(
                         fontWeight: FontWeight.w300,
                         color: ColorsConst.grey,
@@ -140,7 +140,7 @@ class _AddReviewScreenState extends ConsumerState<AddReviewScreen> {
                   ),
                 )),
             CustomButton(
-              label: "Save Review",
+              label: "شارك المراجعة",
               onPressed: () async =>
                   await _controller.onAddReviewPressed(widget.book.id),
               style: CustomButtonStyle.primary,

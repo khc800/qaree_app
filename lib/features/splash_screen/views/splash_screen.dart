@@ -29,9 +29,13 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
             builder: (context, snapshot) {
               controller.checkInitialization(snapshot: snapshot);
               return Container(
-                color: ColorsConst.primaryBlack,
+                color: Colors.white,
                 child: Center(
-                  child: Image.asset('assets/images/white_logo.png'),
+                  child: Container(
+                    height: 150,
+                    width: 150,
+                    child: Image.asset("assets/images/RC_logo_color.png"),
+                  ),
                 ),
               );
             }));

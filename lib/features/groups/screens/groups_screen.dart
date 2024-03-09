@@ -21,7 +21,7 @@ class GroupsScreen extends ConsumerStatefulWidget {
 }
 
 class _GroupsScreenState extends ConsumerState<GroupsScreen> {
-  late final GroupsScreenController _controller;
+  late GroupsScreenController _controller;
 
   @override
   void didChangeDependencies() {
@@ -35,7 +35,7 @@ class _GroupsScreenState extends ConsumerState<GroupsScreen> {
     return user.when(
       data: (user) => Scaffold(
         backgroundColor: ColorsConst.veryLightGrey,
-        appBar: CustomAppBar(context: context, title: 'Groups'),
+        appBar: CustomAppBar(context: context, title: 'المجموعات'),
         body: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -121,9 +121,9 @@ class GroupItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Group Name',
+                  'اسم المجموعة',
                   style: context.textThemes.bodyMedium?.copyWith(
-                    fontFamily: "JosefinSans",
+                    fontFamily: "Almarai",
                     color: ColorsConst.grey,
                   ),
                 ),
@@ -137,7 +137,7 @@ class GroupItem extends StatelessWidget {
             Text(
               name ?? "",
               style: context.textThemes.displayMedium?.copyWith(
-                fontFamily: "JosefinSans",
+                fontFamily: "Almarai",
                 color: ColorsConst.primaryBlack,
                 fontWeight: FontWeight.bold,
               ),
@@ -146,7 +146,7 @@ class GroupItem extends StatelessWidget {
             SpacingConst.vSpacing8,
             RichText(
               text: TextSpan(
-                text: 'Members: ',
+                text: 'الأعضاء: ',
                 style: context.textThemes.bodyMedium?.copyWith(
                   color: ColorsConst.primaryPurple,
                   fontWeight: FontWeight.bold,

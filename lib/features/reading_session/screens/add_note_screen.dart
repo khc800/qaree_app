@@ -34,7 +34,7 @@ class _ReadingSessionState extends ConsumerState<AddNoteScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsConst.veryLightGrey,
-      appBar: CustomAppBar(context: context, title: 'Note'),
+      appBar: CustomAppBar(context: context, title: 'فائدة'),
       body: SafeArea(
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -107,7 +107,7 @@ class _ReadingSessionState extends ConsumerState<AddNoteScreen> {
                       borderSide:
                           BorderSide(width: 1, color: ColorsConst.lightGrey),
                     ),
-                    hintText: "write Down your thoughts",
+                    hintText: "قيّد صيدك",
                     hintStyle: context.textThemes.bodyLarge?.copyWith(
                       fontWeight: FontWeight.w300,
                       color: ColorsConst.grey,
@@ -133,7 +133,7 @@ class _ReadingSessionState extends ConsumerState<AddNoteScreen> {
                   CustomButton(
                     width: 110.w,
                     height: 50.h,
-                    label: "Cancel",
+                    label: "ألغ",
                     onPressed: _controller.popScreen,
                     color: ColorsConst.primaryBlack,
                     textStyle: context.textThemes.bodyMedium?.copyWith(
@@ -143,7 +143,7 @@ class _ReadingSessionState extends ConsumerState<AddNoteScreen> {
                   CustomButton(
                     width: 110.w,
                     height: 50.h,
-                    label: "Save",
+                    label: "احفظ",
                     onPressed: () async =>
                         await _controller.onSaveAndPop(widget.book.id!),
                     style: CustomButtonStyle.primary,

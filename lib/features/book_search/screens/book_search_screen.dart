@@ -21,7 +21,7 @@ class BookSearchScreen extends ConsumerStatefulWidget {
 }
 
 class _BookSearchScreenState extends ConsumerState<BookSearchScreen> {
-  late final BookSearchController _controller;
+  late  BookSearchController _controller;
   final _textController = TextEditingController();
   final _scrollController = ScrollController();
   final _books = <Book>[];
@@ -74,7 +74,8 @@ class _BookSearchScreenState extends ConsumerState<BookSearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsConst.lightGreyPrimary,
-      appBar: CustomAppBar(context: context, title: "Book Search"),
+      appBar: CustomAppBar(context: context, title: "البحث عن كتاب"),
+      
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -85,7 +86,7 @@ class _BookSearchScreenState extends ConsumerState<BookSearchScreen> {
               controller: _textController,
               width: 348.w,
               height: 49.h,
-              placeHolderText: "Search",
+              placeHolderText: "ابحث عن كتاب ",
               color: ColorsConst.lightPurple,
               icon: Icons.search,
               onSubmit: (value) {

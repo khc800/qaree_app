@@ -27,7 +27,7 @@ class _CreateGroupScreenState extends ConsumerState<CreateGroupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsConst.veryLightGrey,
-      appBar: CustomAppBar(context: context, title: 'Create Group'),
+      appBar: CustomAppBar(context: context, title: 'إنشاء مجموعة'),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -36,14 +36,14 @@ class _CreateGroupScreenState extends ConsumerState<CreateGroupScreen> {
             TextField(
               controller: _controller.groupNameController,
               decoration: InputDecoration(
-                labelText: 'Name',
+                labelText: 'اسم المجموعة',
               ),
             ),
             SizedBox(height: 16.0),
             TextField(
               controller: _controller.groupDescriptionController,
               decoration: InputDecoration(
-                labelText: 'Description',
+                labelText: 'الوصف',
               ),
             ),
             SizedBox(height: 16.0),
@@ -54,7 +54,7 @@ class _CreateGroupScreenState extends ConsumerState<CreateGroupScreen> {
             // ),
             SizedBox(height: 16.0),
             CustomButton(
-              label: "Create Group",
+              label: "إنشاء المجموعة",
               onPressed: () async => await _controller.createGroup(),
               style: CustomButtonStyle.primary,
               textStyle: context.textThemes.bodyMedium?.copyWith(

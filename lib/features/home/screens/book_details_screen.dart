@@ -24,7 +24,7 @@ class BookDetailsScreen extends ConsumerStatefulWidget {
 }
 
 class _BookDetailsScreenState extends ConsumerState<BookDetailsScreen> {
-  late final HomeScreenController _controller;
+  late  HomeScreenController _controller;
 
   @override
   void didChangeDependencies() {
@@ -72,7 +72,7 @@ class _BookDetailsScreenState extends ConsumerState<BookDetailsScreen> {
                                     textAlign: TextAlign.center,
                                     style: context.textThemes.titleMedium
                                         ?.copyWith(
-                                      fontFamily: "JosefinSans",
+                                      fontFamily: "Almarai",
                                       color: ColorsConst.white,
                                     ),
                                     overflow: TextOverflow.ellipsis,
@@ -82,7 +82,7 @@ class _BookDetailsScreenState extends ConsumerState<BookDetailsScreen> {
                                     widget.book.description ?? "Unknown",
                                     style:
                                         context.textThemes.bodyMedium?.copyWith(
-                                      fontFamily: "JosefinSans",
+                                      fontFamily: "Almarai",
                                       color: ColorsConst.grey,
                                     ),
                                     maxLines: 6,
@@ -201,13 +201,13 @@ class _BookDetailsScreenState extends ConsumerState<BookDetailsScreen> {
                                         "Authors",
                                         style: context.textThemes.bodySmall
                                             ?.copyWith(
-                                          fontFamily: "JosefinSans",
+                                          fontFamily: "Almarai",
                                           color: ColorsConst.grey,
                                         ),
                                       ),
                                       SpacingConst.vSpacing8,
                                       SizedBox(
-                                        height: 35.h,
+                                        height: 30.h,
                                         width: 200.w,
                                         child: widget.book.authors?.length !=
                                                 null
@@ -225,7 +225,7 @@ class _BookDetailsScreenState extends ConsumerState<BookDetailsScreen> {
                                                     style: context
                                                         .textThemes.bodyLarge
                                                         ?.copyWith(
-                                                      fontFamily: "JosefinSans",
+                                                      fontFamily: "Almarai",
                                                       color: ColorsConst
                                                           .primaryBlack,
                                                     ),
@@ -237,7 +237,7 @@ class _BookDetailsScreenState extends ConsumerState<BookDetailsScreen> {
                                                 style: context
                                                     .textThemes.bodyLarge
                                                     ?.copyWith(
-                                                  fontFamily: "JosefinSans",
+                                                  fontFamily: "Almarai",
                                                   color:
                                                       ColorsConst.primaryBlack,
                                                 ),
@@ -315,7 +315,7 @@ class _BookDetailsScreenState extends ConsumerState<BookDetailsScreen> {
                                           notes[index].noteContent.toString(),
                                           style: context.textThemes.bodyLarge
                                               ?.copyWith(
-                                            fontFamily: "JosefinSans",
+                                            fontFamily: "Almarai",
                                             color: ColorsConst.primaryBlack,
                                             height: 2.1.h,
                                           ),
@@ -334,7 +334,7 @@ class _BookDetailsScreenState extends ConsumerState<BookDetailsScreen> {
                                                         notes[index].date),
                                             style: context.textThemes.bodyMedium
                                                 ?.copyWith(
-                                              fontFamily: "JosefinSans",
+                                              fontFamily: "Almarai",
                                               color: ColorsConst.grey,
                                             ),
                                           ),
@@ -352,9 +352,9 @@ class _BookDetailsScreenState extends ConsumerState<BookDetailsScreen> {
                   : FadeInUp(
                       child: Center(
                           child: Text(
-                        "No Notes",
+                        "لم تقيّد فوائد إلى الآن",
                         style: context.textThemes.titleLarge?.copyWith(
-                          fontFamily: "JosefinSans",
+                          fontFamily: "Almarai",
                           color: ColorsConst.primaryBlack,
                         ),
                       )),

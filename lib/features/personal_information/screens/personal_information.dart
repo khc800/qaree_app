@@ -39,11 +39,11 @@ class _PersonalInformationState extends ConsumerState<PersonalInformation> {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 38.0),
                     child: Text(
-                      "Profile",
+                      "الملف الشخصي",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 52,
-                        fontFamily: "JosefinSans",
+                        fontFamily: "Almarai",
                         color: ColorsConst.primaryBlack,
                       ),
                     ),
@@ -62,7 +62,7 @@ class _PersonalInformationState extends ConsumerState<PersonalInformation> {
                       backgroundColor: ColorsConst.veryLightGrey,
                       radius: 55,
                       backgroundImage: AssetImage(
-                        "assets/images/avatar.png",
+                        "assets/images/firas.jpeg",
                       ),
                     ),
                   ),
@@ -94,22 +94,22 @@ class _PersonalInformationState extends ConsumerState<PersonalInformation> {
                         ),
                       },
                       buttonIcon: Icons.label_outline_sharp,
-                      buttonText: "Change the full name",
+                      buttonText: "تغيير الاسم",
                     ),
                     HorizontalButtonUsedInList(
                       onTap: () => {},
                       buttonIcon: Icons.email_outlined,
-                      buttonText: "Change the email",
+                      buttonText: "تغيير البريد الشخصي",
                     ),
                     HorizontalButtonUsedInList(
                       onTap: () => {},
                       buttonIcon: Icons.password_outlined,
-                      buttonText: "Change the password",
+                      buttonText: "تغيير كلمة المرور",
                     ),
                     HorizontalButtonUsedInList(
                       onTap: () => {},
                       buttonIcon: Icons.date_range_outlined,
-                      buttonText: "Change the birth date",
+                      buttonText: "تغيير تاريخ الميلاد",
                     ),
                   ],
                 ),
@@ -119,12 +119,12 @@ class _PersonalInformationState extends ConsumerState<PersonalInformation> {
                     HorizontalButtonUsedInList(
                       onTap: () => {},
                       buttonIcon: Icons.notifications_outlined,
-                      buttonText: "Notifications",
+                      buttonText: "التنبيهات",
                     ),
                     HorizontalButtonUsedInList(
                       onTap: () => signOut(),
                       buttonIcon: Icons.logout,
-                      buttonText: "Log Out",
+                      buttonText: "تسجيل خروج",
                     ),
                   ],
                 ),
